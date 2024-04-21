@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/filghts_nav"
+        android:id="@+id/flights_nav"
         android:enabled="true"
         android:icon="@drawable/ic_flights"
         android:title="@string/flights" />
@@ -27,6 +27,6 @@
     <item
         android:id="@+id/profile_nav"
         android:enabled="true"
-        android:icon="@drawable/ic_profile"
+        android:icon="@drawable/ic_person"
         android:title="@string/profile" />
 </menu>

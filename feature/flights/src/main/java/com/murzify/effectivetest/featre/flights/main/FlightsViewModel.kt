@@ -1,4 +1,4 @@
-package com.murzify.effectivetest.featre.flights
+package com.murzify.effectivetest.featre.flights.main
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -18,9 +18,24 @@ class FlightsViewModel @Inject constructor(
     private val _offers = MutableStateFlow<List<Offer>>(emptyList())
     val offers: StateFlow<List<Offer>> = _offers
 
+    private val _from = MutableStateFlow("")
+    val from: StateFlow<String> = _from
+
     init {
         viewModelScope.launch(Dispatchers.IO) {
             _offers.value = flightsRepository.getOffers()
         }
+        viewModelScope.launch(Dispatchers.IO) {
+            val prev = flightsRepository.getPreviousFrom()
+            _from.value = prev ?: ""
+        }
+    }
+
+    fun updateFrom(text: String) {
+        if (text == from.value) return
+        viewModelScope.launch(Dispatchers.IO) {
+            flightsRepository.setFrom(text)
+        }
+        _from.value = text
     }
 }

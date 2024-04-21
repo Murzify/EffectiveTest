@@ -1,28 +1,20 @@
-package com.murzify.effectivetest.featre.flights
+package com.murzify.effectivetest.featre.flights.main
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.core.widget.doOnTextChanged
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.lifecycleScope
-import androidx.lifecycle.repeatOnLifecycle
-import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.navigation.fragment.findNavController
 import com.hannesdorfmann.adapterdelegates4.ListDelegationAdapter
-import com.hannesdorfmann.adapterdelegates4.dsl.adapterDelegate
-import com.hannesdorfmann.adapterdelegates4.dsl.adapterDelegateViewBinding
-import com.murzify.effectivetest.core.domain.model.Offer
+import com.murzify.effectivetest.core.common.collectStarted
 import com.murzify.effectivetest.featre.flights.databinding.FragmentFlightsBinding
-import com.murzify.effectivetest.featre.flights.databinding.OffersItemBinding
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.launch
-import java.text.NumberFormat
-import java.util.Currency
 
 @AndroidEntryPoint
 class FlightsFragment : Fragment() {
@@ -36,6 +28,8 @@ class FlightsFragment : Fragment() {
     private val adapter = ListDelegationAdapter(
         offersAdapterDelegate()
     )
+
+    @SuppressLint("NotifyDataSetChanged")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -43,24 +37,39 @@ class FlightsFragment : Fragment() {
         _binding = FragmentFlightsBinding.inflate(inflater)
         edge2edgeSetup()
 
-
         binding.apply {
             offersList.adapter = adapter
+            setupListeners()
+            setupViewModelData()
         }
 
         return binding.root
     }
 
+    private fun FragmentFlightsBinding.setupListeners() {
+        fromEditText.doOnTextChanged { text, _, _, _ ->
+            viewModel.updateFrom(text.toString())
+        }
+
+        destinationText.setOnClickListener {
+            val action = FlightsFragmentDirections
+                .actionFlightsFragmentToHostBottomSheet(viewModel.from.value)
+            findNavController().navigate(action)
+        }
+    }
+
     @SuppressLint("NotifyDataSetChanged")
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        lifecycleScope.launch {
-            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
-                viewModel.offers.collect { offers ->
-                    adapter.items = offers
-                    adapter.notifyDataSetChanged()
-                }
+    private fun FragmentFlightsBinding.setupViewModelData() {
+        collectStarted(viewModel.from) {
+            if (it != fromEditText.text.toString()) {
+                fromEditText.setText(it)
             }
+            fromEditText.apply { setSelection(length()) }
+        }
+
+        collectStarted(viewModel.offers) { offers ->
+            adapter.items = offers
+            adapter.notifyDataSetChanged()
         }
     }
 
@@ -75,6 +84,11 @@ class FlightsFragment : Fragment() {
             )
             insets
         }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
 

@@ -1,10 +1,10 @@
-package com.murzify.effectivetest.featre.flights
+package com.murzify.effectivetest.featre.flights.main
 
 import com.hannesdorfmann.adapterdelegates4.dsl.adapterDelegateViewBinding
+import com.murzify.effectivetest.core.common.formatToRub
 import com.murzify.effectivetest.core.domain.model.Offer
+import com.murzify.effectivetest.featre.flights.R
 import com.murzify.effectivetest.featre.flights.databinding.OffersItemBinding
-import java.text.NumberFormat
-import java.util.Currency
 
 fun offersAdapterDelegate() = adapterDelegateViewBinding<Offer, Offer , OffersItemBinding>(
     { layoutInflater, root -> OffersItemBinding.inflate(layoutInflater, root, false) }
@@ -21,13 +21,7 @@ fun offersAdapterDelegate() = adapterDelegateViewBinding<Offer, Offer , OffersIt
             title.text = item.title
             city.text = item.town
 
-            val rub = Currency.getInstance("RUB")
-            val priceFormat = NumberFormat.getCurrencyInstance()
-            priceFormat.apply {
-                maximumFractionDigits = 0
-                currency = rub
-            }
-            val formattedPrice = priceFormat.format(item.price)
+            val formattedPrice = item.price.formatToRub()
             price.text = getString(R.string.offer_price, formattedPrice)
         }
     }

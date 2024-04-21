@@ -38,11 +38,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="8dp"
-                    android:src="@drawable/ic_plane" />
+                    android:src="@drawable/ic_plane"
+                    android:importantForAccessibility="no" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     style="@style/TextInput"
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:textColorHint="@color/grey6"
@@ -76,7 +77,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="8dp"
-                    android:src="@drawable/ic_search" />
+                    android:src="@drawable/ic_search"
+                    android:importantForAccessibility="no" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     style="@style/TextInput"
@@ -101,9 +103,11 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_close" />
+                    android:id="@+id/clear_button"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_close"
+                    android:importantForAccessibility="no" />
             </LinearLayout>
 
         </LinearLayout>
@@ -233,7 +237,8 @@
                         android:layout_width="48dp"
                         android:layout_height="48dp"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/istanbul" />
+                        android:src="@drawable/istanbul"
+                        android:importantForAccessibility="no" />
 
                 </androidx.cardview.widget.CardView>
 
@@ -281,7 +286,8 @@
                         android:layout_width="48dp"
                         android:layout_height="48dp"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/sochi" />
+                        android:src="@drawable/sochi"
+                        android:importantForAccessibility="no" />
 
                 </androidx.cardview.widget.CardView>
 
@@ -329,7 +335,8 @@
                         android:layout_width="48dp"
                         android:layout_height="48dp"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/phuket" />
+                        android:src="@drawable/phuket"
+                        android:importantForAccessibility="no" />
 
                 </androidx.cardview.widget.CardView>
 

@@ -1,3 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <style name="EffectiveTest.Text.Title1" parent="Widget.AppCompat.TextView">
+        <item name="android:font">@font/sf_sembold</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="EffectiveTest.Text.Title2" parent="Widget.AppCompat.TextView">
+        <item name="android:font">@font/sf_sembold</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="EffectiveTest.Text.Title3" parent="Widget.AppCompat.TextView">
+        <item name="android:font">@font/sf_sembold</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="EffectiveTest.Text.Title4" parent="Widget.AppCompat.TextView">
+        <item name="android:font">@font/sf_medium</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+    <style name="EffectiveTest.Text.Text1" parent="Widget.AppCompat.TextView">
+        <item name="android:font">@font/sf_regular</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    <style name="EffectiveTest.Text.Text2" parent="Widget.AppCompat.TextView">
+        <item name="android:font">@font/sf_regular</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+    <style name="EffectiveTest.Text.ButtonText1" parent="Widget.AppCompat.TextView">
+        <item name="android:font">@font/sf_sembold</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="EffectiveTest.Text.TabText" parent="Widget.AppCompat.TextView">
+        <item name="android:font">@font/sf_regular</item>
+        <item name="android:textSize">10sp</item>
+    </style>
 </resources>

@@ -1,6 +1,178 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools">
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/ticket_card"
+        style="?attr/materialCardViewFilledStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:backgroundTint="@color/grey1"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="21dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:id="@+id/price"
+                style="@style/EffectiveTest.Text.Title1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tool:text="6 990 ₽" />
+
+            <View
+                android:id="@+id/circle"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginVertical="7dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/circle"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/barrier3" />
+
+            <TextView
+                android:id="@+id/start_time"
+                style="@style/EffectiveTest.Text.Title4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/circle"
+                app:layout_constraintTop_toBottomOf="@id/price"
+                tool:text="17:45" />
+
+            <View
+                android:id="@+id/dash"
+                android:layout_width="10dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="4dp"
+                android:background="@color/grey6"
+                app:layout_constraintBottom_toBottomOf="@id/start_time"
+                app:layout_constraintStart_toEndOf="@id/start_time"
+                app:layout_constraintTop_toTopOf="@id/start_time" />
+
+            <TextView
+                android:id="@+id/end_time"
+                style="@style/EffectiveTest.Text.Title4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="16dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/dash"
+                app:layout_constraintTop_toBottomOf="@id/price"
+                tool:text="17:45" />
+
+            <TextView
+                android:id="@+id/airport_from_text"
+                style="@style/EffectiveTest.Text.Title4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/grey6"
+                app:layout_constraintStart_toStartOf="@+id/start_time"
+                app:layout_constraintTop_toBottomOf="@+id/start_time"
+                tool:text="DME" />
+
+            <TextView
+                android:id="@+id/airport_dest_text"
+                style="@style/EffectiveTest.Text.Title4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/grey6"
+                app:layout_constraintStart_toStartOf="@+id/end_time"
+                app:layout_constraintTop_toBottomOf="@+id/end_time"
+                tool:text="AER" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/barrier3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="top"
+                app:constraint_referenced_ids="end_time,start_time" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/barrier4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="right"
+                app:constraint_referenced_ids="end_time,airport_dest_text" />
+
+            <TextView
+                android:id="@+id/travel_time_text"
+                style='@style/EffectiveTest.Text.Text2'
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                app:layout_constraintEnd_toStartOf="@+id/slash"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toEndOf="@+id/end_time"
+                app:layout_constraintTop_toBottomOf="@id/barrier3"
+                tool:text="3.5ч в пути" />
+
+            <TextView
+                android:id="@+id/slash"
+                style='@style/EffectiveTest.Text.Text2'
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/slash"
+                android:textColor="@color/grey6"
+                app:layout_constraintEnd_toStartOf="@+id/direct_text"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/travel_time_text"
+                app:layout_constraintTop_toBottomOf="@id/barrier3" />
+
+            <TextView
+                android:id="@+id/direct_text"
+                style='@style/EffectiveTest.Text.Text2'
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/direct"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/slash"
+                app:layout_constraintTop_toBottomOf="@id/barrier3" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/badge"
+        style="@style/Chip"
+        android:backgroundTint="@color/blue"
+        android:layout_marginTop="-8dp"
+        app:layout_constraintStart_toStartOf="@+id/ticket_card"
+        app:layout_constraintTop_toTopOf="@id/ticket_card">
+
+        <TextView
+            android:id="@+id/badge_text"
+            style="@style/EffectiveTest.Text.Title4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="2dp"
+            android:drawablePadding="8dp"
+            tool:text="Самый удобный" />
+    </com.google.android.material.card.MaterialCardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

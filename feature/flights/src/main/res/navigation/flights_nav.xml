@@ -2,7 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/flight_nav"
+    android:id="@+id/flights_nav"
     app:startDestination="@id/flightsFragment">
 
     <fragment
@@ -11,11 +11,15 @@
         android:label="fragment_flights"
         tools:layout="@layout/fragment_flights" >
         <action
-            android:id="@+id/action_flightsFragment_to_searchBottomSheet"
-            app:destination="@id/searchBottomSheet" />
+            android:id="@+id/action_flightsFragment_to_hostBottomSheet"
+            app:destination="@id/hostBottomSheet"/>
     </fragment>
     <dialog
-        android:id="@+id/searchBottomSheet"
-        android:name="com.murzify.effectivetest.featre.flights.search.SearchBottomSheet"
-        android:label="SearchBottomSheet" />
+        android:id="@+id/hostBottomSheet"
+        android:name="com.murzify.effectivetest.featre.flights.search.HostBottomSheet"
+        android:label="HostBottomSheet" >
+        <argument
+            android:name="from"
+            app:argType="string" />
+    </dialog>
 </navigation>

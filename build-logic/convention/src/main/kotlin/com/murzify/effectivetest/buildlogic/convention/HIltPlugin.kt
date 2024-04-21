@@ -1,4 +1,4 @@
-package com.murzify.foodies.buildlogic.convention
+package com.murzify.effectivetest.buildlogic.convention
 
 import org.gradle.api.Plugin
 import org.gradle.api.Project

@@ -4,4 +4,14 @@
         android:fontStyle="normal"
         android:fontWeight="400"
         android:font="@font/sf_regular"/>
+
+    <font
+        android:fontStyle="normal"
+        android:fontWeight="900"
+        android:font="@font/sf_sembold"/>
+
+    <font
+        android:fontStyle="normal"
+        android:fontWeight="60"
+        android:font="@font/sf_medium"/>
 </font-family>

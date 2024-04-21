@@ -1,4 +1,4 @@
-package ru.murzify.everynasa.core.ui
+package com.murzify.effectivetest.core.common
 
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle

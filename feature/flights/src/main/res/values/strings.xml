@@ -1,4 +1,33 @@
 <resources>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="music_fly_title">Музыкально отлететь</string>
+    <string name="destination_sample">Куда - Турция</string>
+    <string name="from_sample">Откуда - Москва</string>
+    <string name="flights_title">Поиск дешевых\nавиабилетов</string>
+    <string name="offer_price">от %1$s </string>
+    <string name="difficult_route">Сложный\nмаршрут</string>
+    <string name="anywhere">Куда\nугодно</string>
+    <string name="anywhere_dest">Куда угодно</string>
+    <string name="weekend">Выходные</string>
+    <string name="hot_tickets">Горячие\nбилеты</string>
+    <string name="istanbul">Стамбул</string>
+    <string name="popular_destination">Популярное направление</string>
+    <string name="sochi">Сочи</string>
+    <string name="phuket">Пхукет</string>
+    <string name="chip_date"><![CDATA[%1$s, <font color=\'#9F9F9F\'>%2$s</font>]]></string>
+    <string name="econom">1,эконом</string>
+    <string name="filters">Фильтры</string>
+    <string name="direct_flights">Прямые рейсы</string>
+    <string name="show_all">Показать все</string>
+    <string name="show_all_tickets">Посмотреть все билеты</string>
+    <string name="back">обратно</string>
+    <string name="select_date">Выбрите дату</string>
+    <string name="direction_title">%1$s-%2$s</string>
+    <string name="date_and_passenger">%1$s, 1 пассажир</string>
+    <string name="slash">" / "</string>
+    <string name="direct">Без пересадок</string>
+    <string name="filter">Фильтр</string>
+    <string name="price_chart">График цен</string>
+    <string name="travel_time">%1$.1fч в пути</string>
+    <string name="clear">clear</string>
 </resources>

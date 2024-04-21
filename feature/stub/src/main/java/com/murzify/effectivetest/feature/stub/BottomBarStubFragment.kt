@@ -5,13 +5,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.murzify.effectivetest.feature.search.databinding.FragmentStubBinding
+import com.murzify.effectivetest.feature.search.databinding.FragmentBottomBarStubBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class StubFragment1 : Fragment() {
+class BottomBarStubFragment : Fragment() {
 
-    private var _binding: FragmentStubBinding? = null
+    private var _binding: FragmentBottomBarStubBinding? = null
     private val binding
         get() = _binding!!
 
@@ -20,7 +20,7 @@ class StubFragment1 : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentStubBinding.inflate(inflater)
+        _binding = FragmentBottomBarStubBinding.inflate(inflater)
         return binding.root
     }
 

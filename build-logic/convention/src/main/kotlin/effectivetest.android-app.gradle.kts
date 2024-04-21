@@ -14,3 +14,7 @@ configure<BaseExtension> {
         versionName = "1.0"
     }
 }
+
+dependencies {
+    "implementation"(libs.androidx.activity)
+}

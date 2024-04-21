@@ -1,6 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-             xmlns:app="http://schemas.android.com/apk/res-auto"
-             android:id="@+id/bottom_sheet_nav">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bottom_sheet_nav"
+    app:startDestination="@id/searchBottomSheet">
 
+    <fragment
+        android:id="@+id/searchBottomSheet"
+        android:name="com.murzify.effectivetest.featre.flights.search.SearchFragment"
+        android:label="SearchBottomSheet" >
+        <action
+            android:id="@+id/action_searchBottomSheet_to_ticketsFragment"
+            app:destination="@id/ticketsFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
+        <action
+            android:id="@+id/action_searchBottomSheet_to_stubFragment"
+            app:destination="@id/stubFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out"/>
+        <argument
+            android:name="from"
+            app:argType="string"
+            android:defaultValue="Москва" />
+    </fragment>
+    <fragment
+        android:id="@+id/ticketsFragment"
+        android:name="com.murzify.effectivetest.featre.flights.tickets.TicketsFragment"
+        android:label="TicketsFragment" >
+        <argument
+            android:name="from"
+            app:argType="string" />
+        <argument android:name="destintaion"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_ticketsFragment_to_allTicketsFragment"
+            app:destination="@id/allTicketsFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/stubFragment"
+        android:name="com.murzify.effectivetest.featre.flights.search.StubFragment"
+        android:label="StubFragment" >
+        <argument
+            android:name="title"
+            app:argType="reference" />
+    </fragment>
+    <fragment
+        android:id="@+id/allTicketsFragment"
+        android:name="com.murzify.effectivetest.featre.flights.alltickets.AllTicketsFragment"
+        android:label="AllTicketsFragment" >
+        <argument
+            android:name="from"
+            app:argType="string" />
+        <argument
+            android:name="destination"
+            app:argType="string" />
+        <argument
+            android:name="departureDate"
+            app:argType="java.util.Date" />
+    </fragment>
 </navigation>
