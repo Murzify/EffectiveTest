@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="16dp">
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="132dp"
+            android:layout_height="132dp"
+            android:src="@drawable/die_antwoord"
+            android:scaleType="centerCrop" />
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        style="@style/EffectiveTest.Text.Title3"
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Die Antwoord"
+        android:layout_marginTop="8dp"/>
+
+    <TextView
+        style="@style/EffectiveTest.Text.Text2"
+        android:id="@+id/city"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Будапешт"
+        android:layout_marginTop="8dp"/>
+
+    <TextView
+        style="@style/EffectiveTest.Text.Text2"
+        android:id="@+id/price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="от 22 264 Р"
+        android:layout_marginTop="4dp"
+        app:drawableStartCompat="@drawable/ic_flights" />
+
+</LinearLayout>

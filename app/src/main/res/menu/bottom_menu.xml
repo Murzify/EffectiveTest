@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/filghts_nav"
+        android:enabled="true"
+        android:icon="@drawable/ic_flights"
+        android:title="@string/flights" />
+
+    <item
+        android:id="@+id/hotels_nav"
+        android:enabled="true"
+        android:icon="@drawable/ic_hotels"
+        android:title="@string/hotels" />
+
+    <item
+        android:id="@+id/shorter_nav"
+        android:enabled="true"
+        android:icon="@drawable/ic_shorter"
+        android:title="@string/shorter" />
+
+    <item
+        android:id="@+id/subscriptions_nav"
+        android:enabled="true"
+        android:icon="@drawable/ic_subscriptions"
+        android:title="@string/subscriptions" />
+
+    <item
+        android:id="@+id/profile_nav"
+        android:enabled="true"
+        android:icon="@drawable/ic_profile"
+        android:title="@string/profile" />
+</menu>

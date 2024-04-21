@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/flight_nav"
+    app:startDestination="@id/flightsFragment">
+
+    <fragment
+        android:id="@+id/flightsFragment"
+        android:name="com.murzify.effectivetest.featre.flights.main.FlightsFragment"
+        android:label="fragment_flights"
+        tools:layout="@layout/fragment_flights" >
+        <action
+            android:id="@+id/action_flightsFragment_to_searchBottomSheet"
+            app:destination="@id/searchBottomSheet" />
+    </fragment>
+    <dialog
+        android:id="@+id/searchBottomSheet"
+        android:name="com.murzify.effectivetest.featre.flights.search.SearchBottomSheet"
+        android:label="SearchBottomSheet" />
+</navigation>
